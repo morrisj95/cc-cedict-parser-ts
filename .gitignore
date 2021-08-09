@@ -1,4 +1,8 @@
+# Ignore
 /build
 /node_modules
 /ild
 *.js
+
+# Allow
+!jest.config.js
