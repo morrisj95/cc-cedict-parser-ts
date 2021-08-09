@@ -1,0 +1,22 @@
+{
+  "name": "cc-cedict-parser-ts",
+  "version": "1.0.0",
+  "description": "A parser for downloaded CC_CEDict text files and a fetch loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morrisj95/cc-cedict-parser-ts.git"
+  },
+  "keywords": [
+    "cc-cedict"
+  ],
+  "author": "Jared Morris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morrisj95/cc-cedict-parser-ts/issues"
+  },
+  "homepage": "https://github.com/morrisj95/cc-cedict-parser-ts#readme"
+}
