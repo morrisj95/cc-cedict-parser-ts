@@ -4,19 +4,29 @@
   "description": "A parser for downloaded CC_CEDict text files and a fetch loader",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./build && tsc",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/morrisj95/cc-cedict-parser-ts.git"
   },
   "keywords": [
-    "cc-cedict"
+    "cc-cedict",
+    "madarin-dataset"
   ],
   "author": "Jared Morris",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/morrisj95/cc-cedict-parser-ts/issues"
   },
-  "homepage": "https://github.com/morrisj95/cc-cedict-parser-ts#readme"
+  "homepage": "https://github.com/morrisj95/cc-cedict-parser-ts#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.13",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.5"
+  }
 }
