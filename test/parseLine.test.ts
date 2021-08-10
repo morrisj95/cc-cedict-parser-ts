@@ -55,10 +55,7 @@ describe('line parser', () => {
           expect(typeof testResult.simplified).toEqual('string');
 
           expect(typeof testResult.pinyin).toEqual('string');
-          expect(
-            testResult.pinyin.match(/[12345]/) ||
-              testResult.pinyin === testResult.traditional
-          ).not.toBeNull();
+          expect(testResult.pinyin.match(/\S/)).not.toBeNull();
 
           expect(Array.isArray(testResult.definitions)).toBe(true);
           expect(typeof testResult.definitions[0]).toEqual('string');
