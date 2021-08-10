@@ -7,6 +7,8 @@ const config = {
     "!**/build/**",
     "!**/dist/**",
     "!**/coverage/**",
+    "!jest.config.js",
+    "!testData.ts"
   ],
   coverageThreshold: {
     global: {
