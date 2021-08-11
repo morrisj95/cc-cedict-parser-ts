@@ -1,20 +1,9 @@
-import { CC_CEDICTEntry } from '../src/types';
-import { cedictIntroSet } from './testData';
-import { matchLine, parseLine } from '../src/parseLine';
+import { matchLine, parseLine } from '../src/parse';
 
 describe('line parser', () => {
   describe('::matchLine', () => {
-    describe('on the intro set sample:', () => {
-      cedictIntroSet.forEach((entry) => {
-        it(`accepts: ${entry}`, () => {
-          expect(!!matchLine(entry)).toBe(true);
-        });
-      });
-    });
-
     describe('when it should reject', () => {
       const commentTest = '# 你 你 [ni3] /you/';
-
       it(`rejects commented line: ${commentTest}`, () => {
         expect(matchLine(commentTest)).toBeNull();
       });
@@ -46,21 +35,11 @@ describe('line parser', () => {
       expect(parseLine(' ')).toBeNull();
     });
 
-    describe('on the intro set sample', () => {
-      cedictIntroSet.forEach((entry) => {
-        it(`returns an entry for: ${entry}`, () => {
-          const testResult: CC_CEDICTEntry = <CC_CEDICTEntry>parseLine(entry);
-          expect(!!testResult).toBe(true);
-          expect(typeof testResult.traditional).toEqual('string');
-          expect(typeof testResult.simplified).toEqual('string');
-
-          expect(typeof testResult.pinyin).toEqual('string');
-          expect(testResult.pinyin.match(/\S/)).not.toBeNull();
-
-          expect(Array.isArray(testResult.definitions)).toBe(true);
-          expect(typeof testResult.definitions[0]).toEqual('string');
-        });
-      });
+    it('replaces u: with umlaut u', () => {
+      expect(
+        parseLine('三氯氰胺 三氯氰胺 [san1 lu:4 qing2 an4] /melamine C3H6N6/')
+          ?.pinyin
+      ).toBe('san1 lü4 qing2 an4');
     });
   });
 });

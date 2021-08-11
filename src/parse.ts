@@ -27,6 +27,7 @@ export const parseLine = (line: string): CC_CEDICTEntry | null => {
         i++;
       }
       p += ` ${rest[i]!.slice(0, -1)}`;
+      p = p.replace(/u:/, 'ü');
     }
     return [p, <string[]>line.split('/').slice(1, -1)];
   })();
