@@ -1,7 +1,7 @@
 import { CC_CEDICTEntry } from 'types';
 
 const CC_CEDICT_ENTRY_REGEX: RegExp =
-  /^(?!#)\S+\s+\S+\s+\[([^\]]*)\]\s+\/.*\/\s*$/gu;
+  /^(?!(# ?))\S+\s+\S+\s+\[([^\]]*)\]\s+\/.*\/\s*$/gu;
 
 export const matchLine = (
   line: string,
