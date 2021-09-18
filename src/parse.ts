@@ -11,8 +11,8 @@ export const parseLine = (line: string): CC_CEDICTEntry | null => {
   if (!match) return null;
 
   return {
-    traditional: match[2] as string,
-    simplified: match[3] as string,
+    traditional: match[2]!,
+    simplified: match[3]!,
     pinyin: match[4]!.replace(/u:/, 'ü'),
     definitions: match[5]!.split('/')
   };
