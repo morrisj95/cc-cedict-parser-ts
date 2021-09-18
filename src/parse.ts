@@ -1,7 +1,5 @@
-import { CC_CEDICTEntry } from "types";
-
-export const CC_CEDICT_ENTRY_REGEX: RegExp =
-  /^(?!(# ?))(\S+)\s+(\S+)\s+\[([^\]]*)\]\s+\/(.*)\/\s*$/us;
+import { CC_CEDICTEntry } from 'types';
+import { CC_CEDICT_ENTRY_REGEX } from './constants'
 
 export const matchLine = (line: string): RegExpMatchArray | null => 
   CC_CEDICT_ENTRY_REGEX.exec(line.trim());
